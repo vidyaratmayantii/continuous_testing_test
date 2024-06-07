@@ -15,7 +15,6 @@ class UserDataTest {
     @Test
     void testUnsuccessfulLogin() {
         UserData user = new UserData(1234, 1234);
-        // Menggunakan assertThrows untuk mengharapkan LoginFailedException
         LoginFailedException exception = assertThrows(LoginFailedException.class, user::login);
         assertEquals(1234, exception.getUserid());
         assertFalse(user.isLoggedIn());
@@ -31,9 +30,13 @@ class UserDataTest {
     @Test
     void testLoginFailedException() {
         UserData user = new UserData(1234, 1234);
-        // Menggunakan assertThrows untuk mengharapkan LoginFailedException
         LoginFailedException exception = assertThrows(LoginFailedException.class, user::login);
         assertTrue(exception instanceof LoginFailedException);
         assertEquals(1234, exception.getUserid());
+    }
+
+    @Test
+    void testIntentionalFailure() {
+        fail("Intentional failure for testing purposes");
     }
 }
