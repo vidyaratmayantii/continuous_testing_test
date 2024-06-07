@@ -25,7 +25,7 @@ class UserDataTest {
     void testInvalidPassword() {
         UserData user = new UserData(9999, 1);
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, user::login);
-        assertEquals("Password harus 4 digit", exception.getMessage());
+        assertEquals("Password wajib 4 digit", exception.getMessage());
     }
 
     @Test
