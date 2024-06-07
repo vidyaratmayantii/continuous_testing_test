@@ -13,7 +13,7 @@ public class UserData {
 
     public void login() {
         if (String.valueOf(password).length() != 4) {
-            throw new IllegalArgumentException("Password wajib 4 digit");
+            throw new IllegalArgumentException("Password harus 4 digit");
         }
         if (userid == 1234 && password == 8766) {
             this.loggedIn = true;
